@@ -88,7 +88,13 @@ public class EarthquakeCityMap extends PApplet {
 	    int yellow = color(255, 255, 0);
 	    
 	    //TODO: Add code here as appropriate
-		earthquakes.stream().forEach(e -> new SimplePointMarker());
+
+		earthquakes.stream().forEach(e -> {
+			SimplePointMarker spm = new SimplePointMarker();
+			spm.setLocation(e.getLocation());
+			map.addMarker(spm);
+		});
+
 
 	}
 		
